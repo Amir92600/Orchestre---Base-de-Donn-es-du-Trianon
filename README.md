@@ -1,4 +1,4 @@
-# Orchestre---Base-de-Donn-es-du-Trianon
+# Orchestre Base de Données du Trianon
 
 # PROJET BASE DE DONNÉES
 
