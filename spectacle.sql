@@ -103,12 +103,14 @@ INSERT INTO representation
 
 
 --> 1. Afficher les événements rangés par dates en ordre croissant
+
 SELECT *
 FROM evenement
 ORDER BY date
 
 
 --> 2. Afficher les événements de type stand-up
+
 SELECT * 
 FROM evenement 
 WHERE LOWER(type)LIKE '%stand up%';
@@ -117,6 +119,7 @@ WHERE LOWER(type)LIKE '%stand up%';
 
 
 --> 3. Afficher la capacité d'occupation de la salle "Molière"
+
 SELECT capacite 
 FROM salle 
 WHERE nom = 'Molière';
@@ -130,6 +133,7 @@ WHERE nom = 'Molière';
 
 
 --> 1. Afficher la/les date(s) où sera présent l'artiste "Messmer"
+
 SELECT evenement.date
 FROM evenement
 JOIN representation ON evenement.id_evenement = representation.id_evenement
@@ -140,6 +144,7 @@ WHERE LOWER(artiste.nom) = 'messmer';
 
 
 --> 2. Afficher les dates où la salle "Victor Hugo" sera occupée
+
 SELECT evenement.date
 FROM evenement
 JOIN salle ON evenement.id_salle = salle.id_salle
@@ -149,7 +154,7 @@ WHERE salle.nom = 'Victor Hugo';
 
 
 --> 3. Afficher les artistes jouant dans la "Mon jour de chance"
-UNCORRECT
+
 SELECT DISTINCT artiste.*
 FROM artiste
 JOIN representation ON artiste.id_artiste = representation.id_artiste
@@ -164,12 +169,14 @@ LIMIT 0, 25;
 
 
 --> 1. Afficher le nombre total de billets vendus pour le "Chaque Seconde Tour"
+
 SELECT SUM(billetsvendus) 
 FROM evenement 
 WHERE nom = 'Chaque Seconde Tour';
 
 
 --> 2. Afficher l'événement qui a connu le moins de succès dans les ventes
+
 SELECT * 
 FROM evenement 
 WHERE billetsvendus = (SELECT MIN(billetsvendus) FROM evenement);
@@ -185,6 +192,7 @@ WHERE billetsvendus = (SELECT MIN(billetsvendus) FROM evenement);
 
 
 --> 1. Afficher les dates où les deux salles seront occupées simultanément
+
 SELECT DISTINCT date AS deuxtheatreoccupes
 FROM evenement
 JOIN salle ON evenement.id_salle = salle.id_salle
@@ -201,6 +209,7 @@ WHERE salle.nom LIKE "Molière")
 
 
 --> 1. Lister tous les artistes et leurs événements associés
+
 SELECT DISTINCT artiste.*, evenement.nom AS evenementassocie
 FROM artiste  
 JOIN representation ON artiste.id_artiste = representation.id_artiste
