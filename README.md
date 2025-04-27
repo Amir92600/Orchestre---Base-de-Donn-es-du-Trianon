@@ -1,6 +1,6 @@
 # Orchestre Base de Données du Trianon
 
-# PROJET BASE DE DONNÉES
+# PROJET DE BASE DE DONNÉES
 
 ## Contexte
 
